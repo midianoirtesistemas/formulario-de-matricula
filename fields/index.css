@@ -34,19 +34,64 @@ select {
   background: url(../assets/icons/arrow-down-01.svg) no-repeat calc(100% - 1rem);
 }
 
+/* 
+  aplica espaço(gap) no elemento que tenha classe 'flex' 
+  1.25 root element (rem)
+  1rem = 16px
+  */
 .address .flex {
   gap: 1.25rem;
 }
 
-.input-wrapper:has(:disabled) {
+/* aplica transparência em todo bloco que tenha o atributo 'disabled' */
+.input-wrapper:has([disabled]) {
   opacity: .5;
 }
 
 /* aplica a todo input que tenha o atributo 'disabled' */
 input{
+  /* se o campo está disabilitado */
   &[disabled] {
     background-color: var(--surface-disabled);
     border: 1px solid var(--stroke-default);
     color: var(--text-primary);
   }
+  /* se o campo tem valor inválido */
+  &:invalid {
+    border: 0.125rem solid var(--semantic-error);
+  }
+
+  & + small {
+    font: var(--text-sm);
+    color: #78716C;
+    /* 
+      aplicar o inline-block para permitir colocar o margin-top 
+      no elemento 'small' que é por padrão 'inline' e só pode receber
+      espaço de distanciamento de aplicar o block
+    */
+    display: inline-block;
+    margin-top: .25rem;
+  }
+
+  /* 
+    aplica no input quando for um campo requerido 
+    e ao lado dele tenha algum elemento com a class '.error'
+    */
+  &[required] + .error {
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+    font: var(--text-sm);
+    color: var(--semantic-error);
+    margin-top: .25rem;
+  }
+
+  /* aplicar quando o quando validador estiver ok 
+    e ao lado de um elemento com a classe '.erro'
+    + = elemento com a classe indicada do lado (elemento 'irmão')  
+  */
+  &:not(:focus):valid + .error {
+    display: none;
+  }
 }
+
