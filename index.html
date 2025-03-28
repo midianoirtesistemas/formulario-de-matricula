@@ -26,7 +26,8 @@
         </p>
 
         <form enctype="multipart/form-data">
-            <fieldset class="child-info">
+            
+          <fieldset class="child-info">
               <legend>Informações da Criança</legend>
 
               <div class="input-wrapper">
@@ -74,6 +75,41 @@
                     </svg>
                     
                   <p>Clique aqui para selecionar os arquivos do aluno.</p>
+                </div>
+              </div>
+
+          </fieldset>
+
+            <fieldset class="address">
+              <legend>Endereço Residencial</legend>
+              
+              <div class="input-wrapper">
+                <label for="cep"></label>
+                <input type="text" id="cep" name="cep" value="68.590-000">
+              </div> 
+
+              <div class="flex">
+                
+                <div class="input-wrapper flex-2">
+                  <label for="rua"></label>
+                  <input type="text" id="rua" name="rua" value="Rua das Flores" disabled>
+                </div>
+
+                <div class="input-wrapper flex-1">
+                  <label for="numero"></label>
+                  <input type="number" id="numero" name="numero" value="123">
+                </div>
+
+              </div>
+
+              <div class="flex">
+                <div class="input-wrapper flex-2">
+                  <label for="cidade"></label>
+                  <input type="text" id="cidade" value="São Paulo" disabled>
+                </div>
+                <div class="input-wrapper flex-1">
+                  <label for="estado"></label>
+                  <input type="text" id="estado" value="SP" disabled>
                 </div>
               </div>
 
