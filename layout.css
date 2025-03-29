@@ -9,11 +9,11 @@
 main {
   overflow: auto;
   padding: 4rem;
-  margin-bottom: 5rem;
 }
 .main-container {
   max-width: 33rem;
   margin-left: auto;
+  margin-bottom: 5rem;
 }
 .back{
   display: flex;
